@@ -1,10 +1,10 @@
+# noqa: E501,E741,F841
 import argparse
 import datetime
 import json
 from typing import Optional, Union, List
 
 import requests
-
 
 def attempt_post(token: str, where: str, expected: Union[int, List[int]], params: Optional[dict] = None,
                  data: Optional[str] = None) -> Union[dict, bool]:
