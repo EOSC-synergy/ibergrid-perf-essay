@@ -21,7 +21,7 @@ def attempt_post(token: str, where: str, expected: Union[int, List[int]], params
 
     print("POST =>", where, "params:", params, "json:", data)
 
-    response = requests.post(where, params=params, data=data, headers=headers, verify=False)
+    response = requests.post(where, params=params, data=data, headers=headers, verify=True)
 
     if response.status_code not in legal:
         print("Unexpected response", response.status_code, "received (vs ", ",".join([str(l) for l in legal]), ") for",
