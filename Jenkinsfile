@@ -23,6 +23,7 @@ pipeline {
                     buildStages(projectConfig)
                 }
             }
+        }
         stage('SQA baseline criterion: QC.Sec & QC.Sty') {
             steps {
                 script {
