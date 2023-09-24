@@ -9,7 +9,21 @@ def projectConfig
 pipeline {
     agent any
 
+    environment {
+        dockerhub_credentials = "o3as-dockerhub-vykozlov"
+    }
+
     stages {
+        stage('SQA baseline dynamic stages') {
+            steps {
+                script {
+                    projectConfig = pipelineConfig(
+                        configFile: '.sqa/config_custom.yml'
+                    )
+                    buildStages(projectConfig)
+                }
+            }
+        }
         stage('SQA baseline criterion: QC.Sec & QC.Sty') {
             steps {
                 script {
