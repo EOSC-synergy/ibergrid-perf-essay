@@ -1,0 +1,6 @@
+[flake8]
+per-file-ignores =
+    scripts/sandbox.py: E501,E741,F841
+    docs/source/conf.py: E501
+exclude = github.com
+
